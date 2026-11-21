@@ -1,0 +1,36 @@
+{
+  "name": "vayuwise-ai",
+  "version": "1.0.0",
+  "description": "VAYUWISE AI - Your Family's Intelligent Clean-Air Companion",
+  "private": true,
+  "engines": {
+    "node": ">=24.22.1 <25.0.0"
+  },
+  "scripts": {
+    "install:all": "npm --prefix server install && npm --prefix client install",
+    "dev:server": "npm --prefix server run dev",
+    "dev:client": "npm --prefix client run dev",
+    "dev": "node -e \"const { spawn } = require('child_process'); spawn('npm', ['--prefix', 'server', 'run', 'dev'], { stdio: 'inherit', shell: true }); spawn('npm', ['--prefix', 'client', 'run', 'dev'], { stdio: 'inherit', shell: true });\"",
+    "build:server": "npm --prefix server run build",
+    "build:client": "npm --prefix client run build",
+    "build": "npm --prefix server run build && npm --prefix client run build",
+    "render-build": "npm --prefix server install && npm --prefix client install && npm --prefix server run build && npm --prefix client run build",
+    "test:server": "npm --prefix server test",
+    "test:client": "npm --prefix client test",
+    "test": "npm --prefix server test && npm --prefix client test",
+    "start": "node server/dist/index.js"
+  },
+  "keywords": [
+    "air-quality",
+    "aqi",
+    "clean-air",
+    "gemini-ai",
+    "cpcb",
+    "open-meteo"
+  ],
+  "author": "VayuWise AI Team",
+  "license": "MIT",
+  "devDependencies": {
+    "puppeteer-core": "^25.18.1"
+  }
+}
